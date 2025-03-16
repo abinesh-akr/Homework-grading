@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Optimized Automated Essay Grader</title>
+    <meta charset="utf-8" />
+    <link type="text/css" rel="stylesheet" href="../style.css" />
+</head>
+
+<body>
+    <div id="canvas">
+        <div>
+            <div id="heading"> <h1><center> OPTIMIZED AUTOMATED ESSAY GRADER </center></h1></div>
+            <br /><br /> <hr /> <hr /> <br />
+
+        <div style="float:left; font-size:18pt" id="scoretable">
+            <img src="../images/grade.jpg" />
+            <h2> Overall Score</h2>
+            <table border="1" align="right">
+                <tr> <th class="big">GRADE (0-5)</th> <th class="big">2.67</th></tr>
+                <tr> <th>Spelling(0-5)</th> <td>4.27</td></tr>
+                <tr> <th>Grammar(0-5)</th> <td>2.83</td></tr>
+                <tr> <th>Coherence(0-5)</th> <td>0.93</td></tr>
+            </table>
+        </div>
+
+        <div style="float:right" id="statistics">
+            <img src="../images/stats.jpg" />
+            <h2> Essay Statistics</h2>
+            <table border="1" align="left">
+                <tr align='left'> <th>Word Count</th> <td>395</td></tr>
+                <tr align='left'> <th>Sentence Count</th> <td>18</td></tr>
+                <tr align='left'> <th>Paragraph Count</th> <td>43</td></tr>
+                <tr align='left'> <th>Average Sentence Length</th> <td>21.94</td> </tr>
+                <tr align='left'> <th>Standard Deviation from the Average Sentence Length</th> <td>17.43</td> </tr>
+            </table>
+        </div>
+        </div>
+
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> <hr /> <hr /> <br />
+
+        <div id="spellings">
+            <img src="../images/spell.jpg" />
+            <h2> Spellings </h2>
+            <h3 style="text-align:left">Number of Misspelt Words ::58</h3>
+            <h2 style="text-align:right" class="score" >Score :: 4.27</h2>
+
+            <table border="1">
+                <thead> <tr> <th>Misspelt Word</th> <th> Spelling Suggestions</th> </tr> </thead>
+                <tbody><tr> <td>OpenCV</td> <td> ['Open CV', 'Open-CV', 'Opencast']</td> </tr><tr> <td>Mepco</td> <td> ['Epcot']</td> </tr><tr> <td>Schlenk</td> <td> ['Schlesien']</td> </tr><tr> <td>Sivakasi</td> <td> ['Invasive']</td> </tr><tr> <td>GYAN</td> <td> ['GUAN', 'GAN', 'YANG', 'GEAN', 'GRAN', 'CYAN', 'RYAN']</td> </tr><tr> <td>Gyan</td> <td> ['Cyan', 'Ryan', 'Guan', 'Gan', 'Yang', 'Gean', 'Gran']</td> </tr><tr> <td>UG</td> <td> ['UH', 'U', 'G', 'AUG', 'RUG', 'TUG', 'LUG', 'DUG', 'MUG', 'PUG', 'UGH', 'HUG', 'BUG', 'FUG']</td> </tr><tr> <td>MCA</td> <td> ['MAC', 'MA', 'CA', 'MICA', 'CAM', 'MOA', 'M CA', 'MIA', 'MCADAM']</td> </tr><tr> <td>Gyanmitra25</td> <td> ['Semitrailer']</td> </tr><tr> <td>COGRID</td> <td> ['CO GRID', 'CO-GRID', 'COG RID', 'COG-RID', 'CORRIDOR']</td> </tr><tr> <td>Kannan</td> <td> ['Kennan', 'Kansan', 'Kannada', 'Kanaka', 'Kananga']</td> </tr><tr> <td>ZWITTERION</td> <td> ['WINTERIZATION']</td> </tr><tr> <td>EEE</td> <td> ['WEE', 'EWE', 'ERE', 'EPEE', 'SEE', 'NEE', 'TEE', 'EEL', 'LEE', 'GEE', 'PEE', 'BEE', 'EYE', 'FEE', 'EVE']</td> </tr><tr> <td>Allwyn</td> <td> ['Allyn', 'Hallway']</td> </tr><tr> <td>Asis</td> <td> ['Asia', 'Sis', 'Asir', 'Acis', 'Amis', 'Apis', 'Psis', 'Avis', 'Isis', "As's", 'A sis', 'As is', 'As-is', 'Ass', 'Ais']</td> </tr><tr> <td>ECE</td> <td> ['EVE', 'ICE', 'ACE', 'ERE', 'ECU', 'EYE', 'EKE', 'EWE', 'ECO', 'EDE', 'ECK', 'EC']</td> </tr><tr> <td>BME</td> <td> ['BE', 'ME', 'BEE', 'BYE', 'MME', 'B ME', 'BM']</td> </tr><tr> <td>Benitha</td> <td> ['Benita', 'Zenithal']</td> </tr><tr> <td>__</td> <td> []</td> </tr><tr> <td>VIPRAVUHA</td> <td> ['VIBRAHARP']</td> </tr><tr> <td>CSE</td> <td> ['CS', 'CASE', 'SEC', 'CSC', 'CUE', 'USE', 'CS E', 'CE', 'CHE']</td> </tr><tr> <td>DS</td> <td> ['SD', 'SS', 'DD', 'D', 'S', 'EDS', 'DIS', 'IDS', 'ADS', 'DOS', 'DDS', 'GDS', 'DE', 'ES', 'DI']</td> </tr><tr> <td>_</td> <td> ['e', 's', 'i', 'a', 'n', 'r', 't', 'o', 'l', 'c', 'd', 'u', 'g', 'm', 'p']</td> </tr><tr> <td>Swathika</td> <td> ['Swastika']</td> </tr><tr> <td>CRYPTIX</td> <td> ['CRYPTIC', 'CRYPT IX', 'CRYPT-IX', 'CRYPT']</td> </tr><tr> <td>Marichelvam</td> <td> ['Maricela']</td> </tr><tr> <td>BIOLOGIX</td> <td> ['BIOLOGIC']</td> </tr><tr> <td>Arul</td> <td> ['Aral', 'Aryl', 'Aril', 'Arum', 'Arugula']</td> </tr><tr> <td>Jayanthi</td> <td> ['Hinayana']</td> </tr><tr> <td>Thanga</td> <td> ['Thana', 'Tanga', 'Than']</td> </tr><tr> <td>Giri</td> <td> ['Giro', 'Girt', 'Girl', 'Gird']</td> </tr><tr> <td>Murugachandravel</td> <td> ['Ramachandra']</td> </tr><tr> <td>Ww</td> <td> ['WW', 'W', 'Aw', 'Ow', 'Cw', 'Wu', 'Wm', 'Wb', 'Kw', 'Sw', 'WI', 'WA', 'Lw', 'WC']</td> </tr><tr> <td>rl</td> <td> ['el', 'r', 'l', 'rel', 're', 'rs', 'al', 'rt', 'll', 'cl', 'rd', 'gl', 'rm', 'ml', 'pl']</td> </tr><tr> <td>sll</td> <td> ['till', 'all', 'll', 'sell', 'sill', 'ell', 'ill', 'sal', 'sol', 'sld', 'sly', 'Ill', 's ll']</td> </tr><tr> <td>Ve</td> <td> ['V', 'E', 'Ven', 'Va', 'Ae', 'Ne', 'Re', 'Vt', 'De', 'Me', 'Pe', 'He', 'Be', 'Ye', 'We']</td> </tr><tr> <td>ie</td> <td> ['IE', 'ai', 'i', 'e', 'ire', 'tie', 'lie', 'ice', 'die', 'gie', 'pie', 'hie', 'fie', 'vie', 'Lie']</td> </tr><tr> <td>MESEO</td> <td> ['MESEEMS']</td> </tr><tr> <td>SCHLENK</td> <td> ['SCHLESIEN']</td> </tr><tr> <td>te</td> <td> ['ch', 'et', 'Te', 're', 'ye', 'tr', 't', 'e', 'tee', 'tie', 'tea', 'ate', 'ten', 'ter', 'rte']</td> </tr><tr> <td>OTE</td> <td> ['OCH', 'TOE', 'ORE', 'NOTE', 'ROTE', 'TOTE', 'COTE', 'DOTE', 'MOTE', 'VOTE', 'ATE', 'ONE', 'RTE', 'OLE']</td> </tr><tr> <td>huidnemens</td> <td> ['enshrinement']</td> </tr><tr> <td>Niepco</td> <td> ['Connie']</td> </tr><tr> <td>errr</td> <td> ['err', 'error', 'errs', 'err r', 'Errol']</td> </tr><tr> <td>Pia</td> <td> ['Pa', 'Pisa', 'Pima', 'Piaf', 'Ria', 'Via', 'Tia', 'Mia', 'Pis', 'Pi', 'Psia', 'Pita', 'Pica', 'Pika']</td> </tr><tr> <td>bing</td> <td> ['bung', 'bong', 'bin', 'big', 'binge', 'being', 'bring', 'bingo', 'bling', 'bine', 'bins', 'sing', 'bang', 'ring', 'ting']</td> </tr><tr> <td>alah</td> <td> ['ala', 'aah', 'galah', 'alae', 'alas', 'alar', 'amah', 'blah', 'ayah', 'al ah', 'al-ah', 'ala h', 'Allah', 'hallah', 'wallah']</td> </tr></tbody>
+            </table>
+        </div>
+        <br /> <hr /> <hr /> <br />
+
+        <div id="grammar">
+            <img src="../images/grammar.jpg" />
+            <h2> Grammar </h2>
+            <h2 style="text-align:right" class="score" >Score :: 2.83</h2>
+
+            <table border="0">
+                <thead> <tr> <th>Sentences</th> <th> Score</th> </tr> </thead>
+                <tbody><tr> <td>25- Internal students Participation in Workshops and Events Pia bing - alah
+
+</td> <td> 5</td> </tr><tr> <td>_|</td> <td> 5</td> </tr><tr> <td>No registration fee for events.
+
+</td> <td> 5</td> </tr><tr> <td>e</td> <td> 5</td> </tr><tr> <td>e Interested students of 2"!</td> <td> 5</td> </tr><tr> <td>G./AIDS
+5) | CRYPTIX (Mech) Dr.M.K.Marichelvam, ASP/Mech - 7
+6) BIOLOGIX (Bio-Tech.)</td> <td> 4</td> </tr><tr> <td>Dr.P.Swathika, AP(Sr.</td> <td> 4</td> </tr><tr> <td>For any other queries, contact the respective domain coordinators.
+
+SI.</td> <td> 4</td> </tr><tr> <td>Registration should be done only
+through the Domain coordinators.
+
+</td> <td> 4</td> </tr><tr> <td>Students should not register in the Gyanmitra25 website.</td> <td> 4</td> </tr><tr> <td>The registration of workshop and events can be done only through the following respective
+Domain Coordinators on or before 15.02.2025.
+
+</td> <td> 4</td> </tr><tr> <td>For more details
+kindly refer workshop schedule attached with this mail.
+
+</td> <td> 4</td> </tr><tr> <td>The registration fee for workshops is Rs. 200 (for Internal participants only).</td> <td> 4</td> </tr><tr> <td>Our College Students can also participate in the workshops (21 Nos) on 19.2.2025 and events
+(42 Nos) on 20.2.2025 listed in the Gyan Mitra ’25 poster for internal students.
+
+</td> <td> 4</td> </tr><tr> <td>This symposium is
+organized by all Co-curricular Forums/clubs together as a mega event with 21 Workshops on
+Emerging Technologies, Paper Presentations in 7 Parallel Sessions, 57 Technical Events and 3 special
+lectures by External Expert members.
+
+</td> <td> 3</td> </tr><tr> <td>Ms.A.Arul Jayanthi, AP/(SI.G)
+7) EXPONENTS (Common to all) Dr.B.Thanga Giri, ASP/Chemistry
+
+[_ 8) COSSACK (MCA) i Dr.J.Murugachandravel, ASP/MCA -
+
+Ww! rl |
+sll Ve
+
+Encl.: 1) Gyan Mitra’25-</td> <td> 2</td> </tr><tr> <td>Internal Poster 2) Workshop Schedule-Internal 3) Event Schedule-
+
+Internal ie
+MESEO SCHLENK te COLD OTE
+
+Copy to: All HOD’s, All Faculty, All students by Email Sivakasi huidnemens
+Niepco E errr
+Sub: Gyan Mitra *</td> <td> 1</td> </tr><tr> <td>No | Domain name | Domain Coordinators
+I) | COGRID HOCUS (Civil- Arch) | Dr.G.Kannan, AP/Civil
+2) ZWITTERION (EEE) Dr.A. Allwyn Clarence Asis, ASP (Sr.G) /EEE
+3) | ERUDITION (ECE & BME) Dr.V.S.Benitha, ASP/ECE
+4) __| VIPRAVUHA (CSE-IT-AI&DS)</td> <td> 1</td> </tr><tr> <td>year UG, 3 year UG, final year UG, M,E/M.Tech., and MCA
+can participate in one workshop (on 19.2.2025) and multiple number of events (on
+20.2.2025).
+
+</td> <td> -1</td> </tr><tr> <td>OpenCV
+
+Mepco Schlenk Engineering College (Autonomous), Sivakasi
+
+GYAN MITRA ‘25
+
+-A National Level Techno Symposium
+
+19 & 20, Feb 2025 (A Colloquium of Eight Technical Domains)
+
+7.2.2025
+Dear Students,
+Greetings,
+
+It is pleasure to convey that our college is organizing a Two-Day National Level Techno-
+Management Symposium Gyan Mitra ’25 during February 19-20, 2025.</td> <td> -2</td> </tr> </tbody>
+            </table>
+        </div>
+        <br /> <hr /> <hr /> <br />
+
+
+        <div id="coherence">
+            <img src="../images/coherence.jpg" />
+            <h2> Coherence </h2>
+            <h2 class="score" style="text-align:right"> Score :: 0.93</h2>
+
+            <table border="0">
+                <thead> <tr> <th>Sentences</th> <th> Score</th> </tr> </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+        <br /> <hr /> <hr /> <br />
+
+
+        <div>
+        <img src="../images/essay.jpg" />
+
+        <h2> Essay </h2> <div id="essay">OpenCV<br /> <br />Mepco Schlenk Engineering College (Autonomous), Sivakasi<br /> <br />GYAN MITRA ‘25<br /> <br />-A National Level Techno Symposium<br /> <br />19 & 20, Feb 2025 (A Colloquium of Eight Technical Domains)<br /> <br />7.2.2025Dear Students,Greetings,<br /> <br />It is pleasure to convey that our college is organizing a Two-Day National Level Techno-Management Symposium Gyan Mitra ’25 during February 19-20, 2025. This symposium isorganized by all Co-curricular Forums/clubs together as a mega event with 21 Workshops onEmerging Technologies, Paper Presentations in 7 Parallel Sessions, 57 Technical Events and 3 speciallectures by External Expert members.<br /> <br />Our College Students can also participate in the workshops (21 Nos) on 19.2.2025 and events(42 Nos) on 20.2.2025 listed in the Gyan Mitra ’25 poster for internal students.<br /> <br />e Interested students of 2"! year UG, 3 year UG, final year UG, M,E/M.Tech., and MCAcan participate in one workshop (on 19.2.2025) and multiple number of events (on20.2.2025).<br /> <br />e The registration fee for workshops is Rs. 200 (for Internal participants only). For more detailskindly refer workshop schedule attached with this mail.<br /> <br />e No registration fee for events.<br /> <br />e The registration of workshop and events can be done only through the following respectiveDomain Coordinators on or before 15.02.2025.<br /> <br />e Students should not register in the Gyanmitra25 website. Registration should be done onlythrough the Domain coordinators.<br /> <br />For any other queries, contact the respective domain coordinators.<br /> <br />SI. No | Domain name | Domain CoordinatorsI) | COGRID HOCUS (Civil- Arch) | Dr.G.Kannan, AP/Civil2) ZWITTERION (EEE) Dr.A. Allwyn Clarence Asis, ASP (Sr.G) /EEE3) | ERUDITION (ECE & BME) Dr.V.S.Benitha, ASP/ECE4) __| VIPRAVUHA (CSE-IT-AI&DS) _| Dr.P.Swathika, AP(Sr.G./AIDS5) | CRYPTIX (Mech) Dr.M.K.Marichelvam, ASP/Mech - 76) BIOLOGIX (Bio-Tech.) Ms.A.Arul Jayanthi, AP/(SI.G)7) EXPONENTS (Common to all) Dr.B.Thanga Giri, ASP/Chemistry<br /> <br />[_ 8) COSSACK (MCA) i Dr.J.Murugachandravel, ASP/MCA -<br /> <br />Ww! rl |sll Ve<br /> <br />Encl.: 1) Gyan Mitra’25- Internal Poster 2) Workshop Schedule-Internal 3) Event Schedule-<br /> <br />Internal ieMESEO SCHLENK te COLD OTE<br /> <br />Copy to: All HOD’s, All Faculty, All students by Email Sivakasi huidnemensNiepco E errrSub: Gyan Mitra *25- Internal students Participation in Workshops and Events Pia bing - alah<br /> <br /></div></div> <br /> <hr /> <hr /> <br />
+        <div id="conclusion">
+            Leleih K. Emmanuel<br /> Natural Language Processing enthusiast
+        </div>
+
+    </div>
+
+</body>
+
+</html>
+
+

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Optimized Automated Essay Grader</title>
+    <meta charset="utf-8" />
+    <link type="text/css" rel="stylesheet" href="../style.css" />
+</head>
+
+<body>
+    <div id="canvas">
+        <div>
+            <div id="heading"> <h1><center> OPTIMIZED AUTOMATED ESSAY GRADER </center></h1></div>
+            <br /><br /> <hr /> <hr /> <br />
+
+        <div style="float:left; font-size:18pt" id="scoretable">
+            <img src="../images/grade.jpg" />
+            <h2> Overall Score</h2>
+            <table border="1" align="right">
+                <tr> <th class="big">GRADE (0-5)</th> <th class="big">3.21</th></tr>
+                <tr> <th>Spelling(0-5)</th> <td>4.11</td></tr>
+                <tr> <th>Grammar(0-5)</th> <td>4.57</td></tr>
+                <tr> <th>Coherence(0-5)</th> <td>0.95</td></tr>
+            </table>
+        </div>
+
+        <div style="float:right" id="statistics">
+            <img src="../images/stats.jpg" />
+            <h2> Essay Statistics</h2>
+            <table border="1" align="left">
+                <tr align='left'> <th>Word Count</th> <td>369</td></tr>
+                <tr align='left'> <th>Sentence Count</th> <td>29</td></tr>
+                <tr align='left'> <th>Paragraph Count</th> <td>84</td></tr>
+                <tr align='left'> <th>Average Sentence Length</th> <td>12.72</td> </tr>
+                <tr align='left'> <th>Standard Deviation from the Average Sentence Length</th> <td>22.22</td> </tr>
+            </table>
+        </div>
+        </div>
+
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> <hr /> <hr /> <br />
+
+        <div id="spellings">
+            <img src="../images/spell.jpg" />
+            <h2> Spellings </h2>
+            <h3 style="text-align:left">Number of Misspelt Words ::66</h3>
+            <h2 style="text-align:right" class="score" >Score :: 4.11</h2>
+
+            <table border="1">
+                <thead> <tr> <th>Misspelt Word</th> <th> Spelling Suggestions</th> </tr> </thead>
+                <tbody><tr> <td>OpenCV</td> <td> ['Open CV', 'Open-CV', 'Opencast']</td> </tr><tr> <td>MEPCO</td> <td> ['EPCOT']</td> </tr><tr> <td>SCHLENK</td> <td> ['SCHLESIEN']</td> </tr><tr> <td>SIVAKASI</td> <td> ['INVASIVE']</td> </tr><tr> <td>ETABS</td> <td> ['ETAS', 'TABS', 'TABES', 'BETAS', 'STABS', "ETA'S", 'E TABS', 'ET ABS', 'ET-ABS']</td> </tr><tr> <td>RCC</td> <td> ['CC', 'REC', 'ACC', 'ROC', 'RCD', 'R CC', 'RC']</td> </tr><tr> <td>CFD</td> <td> ['CF', 'CD', 'CAD', 'COD', 'CUD', 'MFD', 'CPD', 'CF D', 'CID']</td> </tr><tr> <td>COGRID</td> <td> ['CO GRID', 'CO-GRID', 'COG RID', 'COG-RID', 'CORRIDOR']</td> </tr><tr> <td>_</td> <td> ['e', 's', 'i', 'a', 'n', 'r', 't', 'o', 'l', 'c', 'd', 'u', 'g', 'm', 'p']</td> </tr><tr> <td>OMI</td> <td> ['MOI', 'OM', 'OI', 'MI', 'OMIT', 'KOMI', 'OMS', 'AMI', 'OUI', 'OBI', 'O MI', 'OM I']</td> </tr><tr> <td>Reine</td> <td> ['Rene', 'Seine', 'Rhine', 'Heine', 'Rein', 'Reline', 'Reined', 'Repine', 'Refine', 'Reins', 'Reive', 'Rein e']</td> </tr><tr> <td>MATLAB</td> <td> ['MAT LAB', 'MAT-LAB', 'MAZATLAN']</td> </tr><tr> <td>loT</td> <td> ['lot', 'lo', 'loo', 'log', 'lop', 'lob', 'low', 'lo T', 'Lot', 'lit', 'lots', 'lost', 'slot', 'loti']</td> </tr><tr> <td>Arduino</td> <td> ['Arduous']</td> </tr><tr> <td>Simulink</td> <td> ['Simulant']</td> </tr><tr> <td>JS</td> <td> ['DIS', 'KS', 'JA', 'J', 'S', 'JUS', 'ES', 'SS', 'IS', 'AS', 'JR', 'RS', 'TS', 'JO', 'OS']</td> </tr><tr> <td>3D</td> <td> ['3', 'D', '3RD', 'ED', 'SD', 'ID', 'AD', 'RD', 'OD', 'CD', 'DD', 'PD', 'HD', 'BD', 'YD']</td> </tr><tr> <td>FDM</td> <td> ['FM', 'DM', 'MFD', 'FEM', 'FAM', 'FUM', 'ADM', 'F DM']</td> </tr><tr> <td>Analytics</td> <td> ['Analytic', 'Analytic s', 'Analeptics', 'Annalistic']</td> </tr><tr> <td>ANSYS</td> <td> ['PANSY']</td> </tr><tr> <td>Petri</td> <td> ['Petrie', 'Petra', 'Peri', 'Petrine', 'Petrify', 'Trippet', 'Tripe']</td> </tr><tr> <td>Biologix</td> <td> ['Biologic', 'Biologist']</td> </tr><tr> <td>Beatz</td> <td> ['Blatz', 'Beat', 'Beats', 'Beat z', 'Beatriz']</td> </tr><tr> <td>Quizzatron</td> <td> ['Quantization']</td> </tr><tr> <td>modelling</td> <td> ['modeling', 'model ling', 'model-ling', 'Medellin']</td> </tr><tr> <td>Solidworks</td> <td> ['Solid works', 'Solid-works', 'Lifeworks']</td> </tr><tr> <td>2D</td> <td> ['2', 'D', '2ND', 'ED', 'SD', 'ID', 'AD', 'RD', 'OD', 'CD', 'DD', 'PD', 'HD', 'BD', 'YD']</td> </tr><tr> <td>NS3</td> <td> ['NS']</td> </tr><tr> <td>Apti</td> <td> ['Asti', 'Apt', 'Anti', 'Apt i']</td> </tr><tr> <td>Cogrid</td> <td> ['Co grid', 'Co-grid', 'Cog rid', 'Cog-rid', 'Corridor']</td> </tr><tr> <td>Kannan</td> <td> ['Kennan', 'Kansan', 'Kannada', 'Kanaka', 'Kananga']</td> </tr><tr> <td>Zwitterion</td> <td> ['Winterization']</td> </tr><tr> <td>Allwyn</td> <td> ['Allyn', 'Hallway']</td> </tr><tr> <td>Asis</td> <td> ['Asia', 'Sis', 'Asir', 'Acis', 'Amis', 'Apis', 'Psis', 'Avis', 'Isis', "As's", 'A sis', 'As is', 'As-is', 'Ass', 'Ais']</td> </tr><tr> <td>EEE</td> <td> ['WEE', 'EWE', 'ERE', 'EPEE', 'SEE', 'NEE', 'TEE', 'EEL', 'LEE', 'GEE', 'PEE', 'BEE', 'EYE', 'FEE', 'EVE']</td> </tr><tr> <td>Benitha</td> <td> ['Benita', 'Zenithal']</td> </tr><tr> <td>ECE</td> <td> ['EVE', 'ICE', 'ACE', 'ERE', 'ECU', 'EYE', 'EKE', 'EWE', 'ECO', 'EDE', 'ECK', 'EC']</td> </tr><tr> <td>YY</td> <td> ['Y', 'YE', 'YA', 'YR', 'YO', 'YD', 'MY', 'BY', 'RY', 'TY', 'DY', 'KY', 'YT', 'YB']</td> </tr><tr> <td>Vipravuha</td> <td> ['Vibraharp']</td> </tr><tr> <td>Swathika</td> <td> ['Swastika']</td> </tr><tr> <td>Cryptix</td> <td> ['Cryptic', 'Crypt ix', 'Crypt-ix', 'Crypt']</td> </tr><tr> <td>Marichelvam</td> <td> ['Maricela']</td> </tr><tr> <td>Arul</td> <td> ['Aral', 'Aryl', 'Aril', 'Arum', 'Arugula']</td> </tr><tr> <td>Jayanthi</td> <td> ['Hinayana']</td> </tr><tr> <td>Sl</td> <td> ['S', 'L', 'Sal', 'Sol', 'Se', 'El', 'Si', 'Al', 'Sn', 'Sr', 'St', 'So', 'Ll', 'Sc', 'Cl']</td> </tr><tr> <td>Thanga</td> <td> ['Thana', 'Tanga', 'Than']</td> </tr><tr> <td>Giri</td> <td> ['Giro', 'Girt', 'Girl', 'Gird']</td> </tr><tr> <td>Murugachandravel</td> <td> ['Ramachandra']</td> </tr><tr> <td>MCA</td> <td> ['MAC', 'MA', 'CA', 'MICA', 'CAM', 'MOA', 'M CA', 'MIA', 'MCADAM']</td> </tr><tr> <td>GYAN</td> <td> ['GUAN', 'GAN', 'YANG', 'GEAN', 'GRAN', 'CYAN', 'RYAN']</td> </tr><tr> <td>MTRA</td> <td> ['MART', 'TRAM', 'MARA', 'MORA', 'MYRA', 'MITRA', 'MIRA']</td> </tr><tr> <td>Circuitrix</td> <td> ['Circuitry', 'Circuity', 'Circuit']</td> </tr><tr> <td>IPL</td> <td> ['PL', 'DIPL', 'LIP', 'ISL', 'ILL', 'CPL', 'I PL']</td> </tr><tr> <td>CRYPTIX</td> <td> ['CRYPTIC', 'CRYPT IX', 'CRYPT-IX', 'CRYPT']</td> </tr><tr> <td>AutoCAD</td> <td> ['Auto Cad', 'Auto CAD', 'Auto-CAD', 'Autocade', 'Auto-cad', 'Autocrat']</td> </tr><tr> <td>Modelling</td> <td> ['Modeling', 'Model ling', 'Model-ling', 'Medellin']</td> </tr><tr> <td>Exploro</td> <td> ['Explore', 'Explorer', 'Plexor']</td> </tr><tr> <td>Quizzify</td> <td> ['Quizzing']</td> </tr><tr> <td>ERUDTION</td> <td> ['ERUDITION', 'ERUPTION']</td> </tr><tr> <td>BME</td> <td> ['BE', 'ME', 'BEE', 'BYE', 'MME', 'B ME', 'BM']</td> </tr><tr> <td>VIPRAVUHA</td> <td> ['VIBRAHARP']</td> </tr><tr> <td>CSE</td> <td> ['CS', 'CASE', 'SEC', 'CSC', 'CUE', 'USE', 'CS E', 'CE', 'CHE']</td> </tr></tbody>
+            </table>
+        </div>
+        <br /> <hr /> <hr /> <br />
+
+        <div id="grammar">
+            <img src="../images/grammar.jpg" />
+            <h2> Grammar </h2>
+            <h2 style="text-align:right" class="score" >Score :: 4.57</h2>
+
+            <table border="0">
+                <thead> <tr> <th>Sentences</th> <th> Score</th> </tr> </thead>
+                <tbody><tr> <td>Bug Bash
+Ld
+
+</td> <td> 5</td> </tr><tr> <td>Query Quest
+
+5.</td> <td> 5</td> </tr><tr> <td>Byte Battle
+3.Puzzle Web
+4.</td> <td> 5</td> </tr><tr> <td>(ECE / BME)
+
+J VIPRAVUHA
+(CSE / IT / AIDS)
+1.Paper Presentation
+2.</td> <td> 5</td> </tr><tr> <td>Quizzify
+
+(~“ERUDTION
+\_</td> <td> 5</td> </tr><tr> <td>Bug Busters
+3.</td> <td> 5</td> </tr><tr> <td>Paper Exploro
+2.</td> <td> 5</td> </tr><tr> <td>Cad Modelling
+
+1.</td> <td> 5</td> </tr><tr> <td>Mobile Robotics
+
+5.</td> <td> 5</td> </tr><tr> <td>AutoCAD Assembly
+
+4.</td> <td> 5</td> </tr><tr> <td>Paper Presentation
+
+2.</td> <td> 5</td> </tr><tr> <td>Idea Presentation
+
+“CRYPTIX
+(MECH)
+
+1.</td> <td> 5</td> </tr><tr> <td>Black Hat
+
+6.</td> <td> 5</td> </tr><tr> <td>IPL Auction
+
+5.</td> <td> 5</td> </tr><tr> <td>Project Presentation
+4.</td> <td> 5</td> </tr><tr> <td>Technical Quiz
+
+3.</td> <td> 5</td> </tr><tr> <td>Circuitrix
+
+2.</td> <td> 5</td> </tr><tr> <td>“25
+
+A NATIONAL LEVEL TECHNO SYMPOSIUM (A COLLOQUIUM OF 8 TECHNICAL DOMAINS)
+
+1.</td> <td> 5</td> </tr><tr> <td>Workshop on 2D Gel Electrophoresis
+
+» Network Simulation using NS3
+» Building Scalable Full Stack Applications Using Cloud
+
+1.Tech Debate
+
+2.The Calculus Relay
+
+3.DAMN (Deep Apti
+Mind Nonstop)
+
+4.</td> <td> 5</td> </tr><tr> <td>Quizzatron
+
+» Part modelling and Assembly using Solidworks
+
+»</td> <td> 5</td> </tr><tr> <td>Renewable Energy Technologies 5.</td> <td> 5</td> </tr><tr> <td>Biologix-Beatz
+
+> .
+</td> <td> 5</td> </tr><tr> <td>Bio-Blitz: "Science in
+action"
+
+4.</td> <td> 5</td> </tr><tr> <td>Biotech Jamboree
+
+3.</td> <td> 5</td> </tr><tr> <td>Future Trends in Electric Vehicle
+
+1.Petri palette
+
+2.</td> <td> 5</td> </tr><tr> <td>Finite Element Analysis using ANSYS
+»</td> <td> 5</td> </tr><tr> <td>Zero to App Hero: Mobile Application Development with Flutter
+
+»</td> <td> 5</td> </tr><tr> <td>» Workshop on Data Analytics and its tools
+
+»</td> <td> 5</td> </tr><tr> <td>Building Dynamic Web Apps with React JS
+» Transforming Medical images into 3D reality with MIMICS and FDM tool:
+</td> <td> 5</td> </tr><tr> <td>Deep Learning with MATLAB
+
+» MATLAB for Engineering Applications
+
+» Powering loT using Arduino
+
+» Internet of Things with Raspberry Pi
+
+» Hardware Co-simulation using Simulink
+
+»</td> <td> 5</td> </tr><tr> <td>(OMI 7 ARCH
+» Traditional Art Installation Reine
+» Python Programming for Electrical Engineers
+»</td> <td> 5</td> </tr><tr> <td>Introduction to CFD with Civil Engineering Applications
+
+“COGRID HOCUS
+\_</td> <td> 5</td> </tr><tr> <td>Mastering Structural Excellence: An ETABS Workshop on RCC Framed Structures’
+»</td> <td> 5</td> </tr><tr> <td>Solid Modeling &
+Assembly using Solid
+Works
+
+3.</td> <td> 4</td> </tr><tr> <td>Vipravuha - Dr.P.Swathika,AP(Sr.</td> <td> 4</td> </tr><tr> <td>G)/EEE
+Erudition - Dr.V.S.Benitha, ASP/ECE YY.
+</td> <td> 4</td> </tr><tr> <td>+ Register yourself with the respective Faculty
+Coordinator for participation.
+
+</td> <td> 4</td> </tr><tr> <td>CONTACT FACULTY COORDINATORS
+
+Cogrid Hocus - Dr.G.Kannan, AP/Civil
+
+Zwitterion - Dr.A.Allwyn Clarence Asis, ASP(Sr.</td> <td> 3</td> </tr><tr> <td>OpenCV
+
+MEPCO SCHLENK ENGINEERING COLLEGE
+
+(AUTONOMOUS) SIVAKASI
+
+> e” INTERNAL EVENTS
+DAY 01 - WORKSHOPS
+
+»</td> <td> 3</td> </tr><tr> <td>LAST DATE FOR WORKSHOP & EVENT REGISTRATION - 15.02.2025
+For queries, workshop & event details
+
+</td> <td> 2</td> </tr><tr> <td>Fusion Fest
+
+» Applied Linear Algebra for Signal Processing and Machine Learning
+
+« Website registration is required only for external
+participants; internal participants don't need to register.
+
+</td> <td> 2</td> </tr><tr> <td>G.)/AIDS
+
+Cryptix - Dr.M.K.Marichelvam, ASP/Mech
+
+Biologix - Ms.A.Arul Jayanthi, AP(Sl.G) /BT
+Exponents - Dr.B. Thanga Giri, ASP/Chemistry
+Cossack - Dr.J.Murugachandravel, ASP/MCA
+
+y ON GYAN MTRA</td> <td> 1</td> </tr> </tbody>
+            </table>
+        </div>
+        <br /> <hr /> <hr /> <br />
+
+
+        <div id="coherence">
+            <img src="../images/coherence.jpg" />
+            <h2> Coherence </h2>
+            <h2 class="score" style="text-align:right"> Score :: 0.95</h2>
+
+            <table border="0">
+                <thead> <tr> <th>Sentences</th> <th> Score</th> </tr> </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+        <br /> <hr /> <hr /> <br />
+
+
+        <div>
+        <img src="../images/essay.jpg" />
+
+        <h2> Essay </h2> <div id="essay">OpenCV<br /> <br />MEPCO SCHLENK ENGINEERING COLLEGE<br /> <br />(AUTONOMOUS) SIVAKASI<br /> <br />> e” INTERNAL EVENTSDAY 01 - WORKSHOPS<br /> <br />» Mastering Structural Excellence: An ETABS Workshop on RCC Framed Structures’» Introduction to CFD with Civil Engineering Applications<br /> <br />“COGRID HOCUS\_ (OMI 7 ARCH» Traditional Art Installation Reine» Python Programming for Electrical Engineers» Deep Learning with MATLAB<br /> <br />» MATLAB for Engineering Applications<br /> <br />» Powering loT using Arduino<br /> <br />» Internet of Things with Raspberry Pi<br /> <br />» Hardware Co-simulation using Simulink<br /> <br />» Building Dynamic Web Apps with React JS» Transforming Medical images into 3D reality with MIMICS and FDM tool:» Workshop on Data Analytics and its tools<br /> <br />» Zero to App Hero: Mobile Application Development with Flutter<br /> <br />» Finite Element Analysis using ANSYS» Future Trends in Electric Vehicle<br /> <br />1.Petri palette<br /> <br />2. Biotech Jamboree<br /> <br />3. Bio-Blitz: "Science inaction"<br /> <br />4. Biologix-Beatz<br /> <br />> .Renewable Energy Technologies 5. Quizzatron<br /> <br />» Part modelling and Assembly using Solidworks<br /> <br />» Workshop on 2D Gel Electrophoresis<br /> <br />» Network Simulation using NS3» Building Scalable Full Stack Applications Using Cloud<br /> <br />1.Tech Debate<br /> <br />2.The Calculus Relay<br /> <br />3.DAMN (Deep AptiMind Nonstop)<br /> <br />4. Fusion Fest<br /> <br />» Applied Linear Algebra for Signal Processing and Machine Learning<br /> <br />« Website registration is required only for externalparticipants; internal participants don't need to register.<br /> <br />+ Register yourself with the respective FacultyCoordinator for participation.<br /> <br />LAST DATE FOR WORKSHOP & EVENT REGISTRATION - 15.02.2025For queries, workshop & event details<br /> <br />CONTACT FACULTY COORDINATORS<br /> <br />Cogrid Hocus - Dr.G.Kannan, AP/Civil<br /> <br />Zwitterion - Dr.A.Allwyn Clarence Asis, ASP(Sr.G)/EEEErudition - Dr.V.S.Benitha, ASP/ECE YY.Vipravuha - Dr.P.Swathika,AP(Sr.G.)/AIDS<br /> <br />Cryptix - Dr.M.K.Marichelvam, ASP/Mech<br /> <br />Biologix - Ms.A.Arul Jayanthi, AP(Sl.G) /BTExponents - Dr.B. Thanga Giri, ASP/ChemistryCossack - Dr.J.Murugachandravel, ASP/MCA<br /> <br />y ON GYAN MTRA “25<br /> <br />A NATIONAL LEVEL TECHNO SYMPOSIUM (A COLLOQUIUM OF 8 TECHNICAL DOMAINS)<br /> <br />1. Circuitrix<br /> <br />2. Technical Quiz<br /> <br />3. Project Presentation4. IPL Auction<br /> <br />5. Black Hat<br /> <br />6. Idea Presentation<br /> <br />“CRYPTIX(MECH)<br /> <br />1. Paper Presentation<br /> <br />2. Solid Modeling &Assembly using SolidWorks<br /> <br />3. AutoCAD Assembly<br /> <br />4. Mobile Robotics<br /> <br />5. Cad Modelling<br /> <br />1. Paper Exploro2. Bug Busters3. Quizzify<br /> <br />(~“ERUDTION\_ (ECE / BME)<br /> <br />J VIPRAVUHA(CSE / IT / AIDS)1.Paper Presentation2. Byte Battle3.Puzzle Web4. Query Quest<br /> <br />5. Bug BashLd<br /> <br /></div></div> <br /> <hr /> <hr /> <br />
+        <div id="conclusion">
+            Leleih K. Emmanuel<br /> Natural Language Processing enthusiast
+        </div>
+
+    </div>
+
+</body>
+
+</html>
+
+

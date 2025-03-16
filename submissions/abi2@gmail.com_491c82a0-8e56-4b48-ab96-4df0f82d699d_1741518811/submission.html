@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Optimized Automated Essay Grader</title>
+    <meta charset="utf-8" />
+    <link type="text/css" rel="stylesheet" href="../style.css" />
+</head>
+
+<body>
+    <div id="canvas">
+        <div>
+            <div id="heading"> <h1><center> OPTIMIZED AUTOMATED ESSAY GRADER </center></h1></div>
+            <br /><br /> <hr /> <hr /> <br />
+
+        <div style="float:left; font-size:18pt" id="scoretable">
+            <img src="../images/grade.jpg" />
+            <h2> Overall Score</h2>
+            <table border="1" align="right">
+                <tr> <th class="big">GRADE (0-5)</th> <th class="big">2.62</th></tr>
+                <tr> <th>Spelling(0-5)</th> <td>2.10</td></tr>
+                <tr> <th>Grammar(0-5)</th> <td>5.00</td></tr>
+                <tr> <th>Coherence(0-5)</th> <td>0.77</td></tr>
+            </table>
+        </div>
+
+        <div style="float:right" id="statistics">
+            <img src="../images/stats.jpg" />
+            <h2> Essay Statistics</h2>
+            <table border="1" align="left">
+                <tr align='left'> <th>Word Count</th> <td>50</td></tr>
+                <tr align='left'> <th>Sentence Count</th> <td>2</td></tr>
+                <tr align='left'> <th>Paragraph Count</th> <td>11</td></tr>
+                <tr align='left'> <th>Average Sentence Length</th> <td>25.00</td> </tr>
+                <tr align='left'> <th>Standard Deviation from the Average Sentence Length</th> <td>5.00</td> </tr>
+            </table>
+        </div>
+        </div>
+
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> <hr /> <hr /> <br />
+
+        <div id="spellings">
+            <img src="../images/spell.jpg" />
+            <h2> Spellings </h2>
+            <h3 style="text-align:left">Number of Misspelt Words ::29</h3>
+            <h2 style="text-align:right" class="score" >Score :: 2.10</h2>
+
+            <table border="1">
+                <thead> <tr> <th>Misspelt Word</th> <th> Spelling Suggestions</th> </tr> </thead>
+                <tbody><tr> <td>OpenCV</td> <td> ['Open CV', 'Open-CV', 'Opencast']</td> </tr><tr> <td>COG06</td> <td> ['COG']</td> </tr><tr> <td>IIT</td> <td> ['II', 'IT', 'INIT', 'IMIT', 'SIT', 'III', 'AIT', 'INT', 'NIT', 'RIT', 'TIT', 'LIT', 'CIT', 'DIT', 'GIT']</td> </tr><tr> <td>19CS602</td> <td> []</td> </tr><tr> <td>TAS60</td> <td> ['TASS']</td> </tr><tr> <td>NPTEL</td> <td> ['NP TEL', 'NP-TEL', 'PATEL']</td> </tr><tr> <td>jocs6oi</td> <td> ['jocosity']</td> </tr><tr> <td>RPP</td> <td> ['PPR', 'PP', 'REPP', 'REP', 'RPS', 'SPP', 'RIP', 'RAP', 'APP', 'RPT', 'OPP', 'RPM', 'R PP']</td> </tr><tr> <td>19CS651</td> <td> []</td> </tr><tr> <td>19CS652</td> <td> []</td> </tr><tr> <td>19cs602</td> <td> []</td> </tr><tr> <td>19Cs601</td> <td> []</td> </tr><tr> <td>Asso</td> <td> ['As so', 'As-so', 'Azo', 'Ass', 'Lasso', 'Assoc', 'Basso', 'Tasso', 'Assn', 'Asst', 'Also', 'Ass o']</td> </tr><tr> <td>19CS601</td> <td> []</td> </tr><tr> <td>19CS603</td> <td> []</td> </tr><tr> <td>oor</td> <td> ['roo', 'oo', 'or', 'odor', 'door', 'moor', 'poor', 'boor', 'Moor', 'oar', 'nor', 'tor', 'cor', 'dor', 'our']</td> </tr><tr> <td>19cs603</td> <td> []</td> </tr><tr> <td>Sef</td> <td> ['Se', 'Sen', 'Ref', 'Set', 'Sec', 'Def', 'Sem', 'Sep', 'Kef', 'Se f', 'Chef', 'Sf', 'Serf', 'Self', 'See']</td> </tr><tr> <td>S603</td> <td> []</td> </tr><tr> <td>ECC</td> <td> ['EXC', 'CC', 'ECCL', 'ACC', 'ENC', 'ETC', 'ECU', 'E CC', 'ECO', 'ECK', 'EC']</td> </tr></tbody>
+            </table>
+        </div>
+        <br /> <hr /> <hr /> <br />
+
+        <div id="grammar">
+            <img src="../images/grammar.jpg" />
+            <h2> Grammar </h2>
+            <h2 style="text-align:right" class="score" >Score :: 5.00</h2>
+
+            <table border="0">
+                <thead> <tr> <th>Sentences</th> <th> Score</th> </tr> </thead>
+                <tbody><tr> <td>| 19CS601 | 19CS603 | 19CS602 oor
+AE 19CS652/19CS651 FL/RPP 19CS602 | 19CS603
+CE 19cs603 | 19CS601 Sef OE CE(L) AE
+Skills
+19CS601 CE 19CS603 AE 19¢$602 | 19¢S603 | OE ECC
+
+</td> <td> 5</td> </tr><tr> <td>OpenCV
+
+Period |
+
+Venue: COG06
+
+OE IIT CE 19CS602 TAS60
+NPTEL/ ’
+AE | jocs6oi RPP 19CS651/19CS652 CE
+OE 19cs602 | 19Cs601 Asso.</td> <td> 5</td> </tr> </tbody>
+            </table>
+        </div>
+        <br /> <hr /> <hr /> <br />
+
+
+        <div id="coherence">
+            <img src="../images/coherence.jpg" />
+            <h2> Coherence </h2>
+            <h2 class="score" style="text-align:right"> Score :: 0.77</h2>
+
+            <table border="0">
+                <thead> <tr> <th>Sentences</th> <th> Score</th> </tr> </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+        <br /> <hr /> <hr /> <br />
+
+
+        <div>
+        <img src="../images/essay.jpg" />
+
+        <h2> Essay </h2> <div id="essay">OpenCV<br /> <br />Period |<br /> <br />Venue: COG06<br /> <br />OE IIT CE 19CS602 TAS60NPTEL/ ’AE | jocs6oi RPP 19CS651/19CS652 CEOE 19cs602 | 19Cs601 Asso. | 19CS601 | 19CS603 | 19CS602 oorAE 19CS652/19CS651 FL/RPP 19CS602 | 19CS603CE 19cs603 | 19CS601 Sef OE CE(L) AESkills19CS601 CE 19CS603 AE 19¢$602 | 19¢S603 | OE ECC<br /> <br /></div></div> <br /> <hr /> <hr /> <br />
+        <div id="conclusion">
+            Leleih K. Emmanuel<br /> Natural Language Processing enthusiast
+        </div>
+
+    </div>
+
+</body>
+
+</html>
+
+
