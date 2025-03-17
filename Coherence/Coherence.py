@@ -1,31 +1,29 @@
-import stanza
+import nltk
 from sentence_transformers import SentenceTransformer
 import numpy as np
 
-# Load Stanza NLP pipeline
-
-nlp = stanza.Pipeline(lang="en", processors="tokenize")
+# Download necessary NLTK resources
+nltk.download('punkt')
 
 # Load pre-trained Sentence-BERT model
 sentence_model = SentenceTransformer("paraphrase-MiniLM-L6-v2")
 
 def check_coherence(essay, key):
     """Calculates coherence score using logic consistency and semantic similarity."""
-    # Extract sentences using Stanza
-    doc = nlp(essay)
-    sentences = [" ".join([word.text for word in sentence.words]) for sentence in doc.sentences]
+    # Extract sentences using NLTK
+    sentences = nltk.sent_tokenize(essay)
 
     # Logic consistency score based on logical connectors
     logic_consistency_score = calculate_logic_consistency(sentences)
 
     # Semantic similarity using Sentence-BERT
-    
     semantic_similarity_score = calculate_semantic_similarity(key, sentences)
 
     # Normalize logic consistency score
     max_score = 5
     logic_consistency_score = min(logic_consistency_score, max_score) / max_score
     semantic_similarity_score = min(semantic_similarity_score, max_score) / max_score
+
     # Final coherence score
     coherence_score = ((logic_consistency_score + semantic_similarity_score) / 2) * 5
 
@@ -69,8 +67,7 @@ def calculate_semantic_similarity(key, sentences):
 
 def get_logical_sentences(essay):
     """Extracts sentences with logical connectors."""
-    doc = nlp(essay)
-    sentences = [" ".join([word.text for word in sentence.words]) for sentence in doc.sentences]
+    sentences = nltk.sent_tokenize(essay)
 
     logical_sentences = [{"sentence": s, "score": 1} for s in sentences if has_logical_connectors(s)]
     
