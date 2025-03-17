@@ -25,7 +25,7 @@ pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tessera
 
 # Initialize Firebase
 if not firebase_admin._apps:
-    cred = credentials.Certificate("serviceAccountkey.json")  # Update the path
+    cred = credentials.Certificate("/etc/secrets/serviceAccountkey.json")  # Update the path
     firebase_admin.initialize_app(cred)
 
 db = firestore.client()
