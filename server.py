@@ -623,20 +623,7 @@ def evaluate_answer():
         return jsonify({"error": str(e)}), 500
 
 
-from semantic import compute_gpt_similarity
 
-@app.route("/evaluate-answer-text", methods=["POST"])
-def evaluate_answer_text():
-    try:
-        text=request.form.get("text")
-        key=request.form.get("key")
-
-
-        score = compute_gpt_similarity(key,text)
-        print(score)
-        return jsonify({"message": "Answer evaluated", "text": score}), 200
-    except Exception as e:
-        return jsonify({"error": str(e)}), 500
 @app.route("/add-comment", methods=["POST"])
 def add_comment():
     data = request.json
