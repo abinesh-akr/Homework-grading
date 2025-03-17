@@ -11,7 +11,7 @@ import logging
 import os
 from flask import send_file
 import matplotlib.pyplot as plt
-from Main import return_score
+#from Main import return_score
 #from proct import start_proctoring
 # Initialize Flask App
 import requests
@@ -597,7 +597,7 @@ def evaluate_answer():
             print(f"Extracted Text: {extracted_text}")
 
             # ✅ Evaluate the answer
-            file, mes, score = return_score(ques + '\n\n' + extracted_text, key)
+            file, mes, score ="","",9.5 #return_score(ques + '\n\n' + extracted_text, key)
 
             # ✅ Store submission in Firestore
             submission_id = f"{student_email}_{question_id}_{int(datetime.now().timestamp())}"
