@@ -31,7 +31,7 @@ def return_score(essay1,key):
     numMisspelt, misspeltWordSug = spellCheck(essay)
 
 
-    grammarCumScore, grammarSentScore = getGrammarScore(essay)
+    grammarCumScore, grammarSentScore = get_grammar_score(essay)
 
 
     coherenceScore = check_coherence(essay,key)
