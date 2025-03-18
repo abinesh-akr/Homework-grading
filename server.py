@@ -1,37 +1,34 @@
-from flask import Flask, request, jsonify
-from flask_cors import CORS
-import firebase_admin
-from firebase_admin import credentials, firestore
-from datetime import datetime
-import pytesseract
-from PIL import Image
-import io
-from werkzeug.security import generate_password_hash, check_password_hash
-import logging
+from flask import Flask, request, jsonify, send_file  
+from flask_cors import CORS  
+import firebase_admin  
+from firebase_admin import credentials, firestore  
+from werkzeug.security import generate_password_hash, check_password_hash  
+import pytesseract  
+from PIL import Image  
+import matplotlib.pyplot as plt  
+import logging  
+import os  
+import requests  
+from datetime import datetime  
+import io  
+
+# Initialize Flask App  
+app = Flask(__name__)  
+CORS(app)  
+
+# Set the path for Tesseract (modify if necessary for your OS)  
+pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"  
+
+# Initialize Firebase  
+if not firebase_admin._apps:  
+    cred = credentials.Certificate("/etc/secrets/serviceAccountkey.json")  # Update the path  
+    firebase_admin.initialize_app(cred)  
+
+db = firestore.client()  
+
+# Configure Logging  
+logging.basicConfig(level=logging.INFO) 
 import os
-from flask import send_file
-import matplotlib.pyplot as plt
-#from Main import return_score
-#from proct import start_proctoring
-# Initialize Flask App
-import requests
-app = Flask(__name__)
-CORS(app)
-import pytesseract
-
-# Windows: Set the path manually if necessary
-pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
-
-
-# Initialize Firebase
-if not firebase_admin._apps:
-    cred = credentials.Certificate("/etc/secrets/serviceAccountkey.json")  # Update the path
-    firebase_admin.initialize_app(cred)
-
-db = firestore.client()
-
-import os
-
 
 
 # API Endpoints
