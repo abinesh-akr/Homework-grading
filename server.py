@@ -81,36 +81,37 @@ def registerstd():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
     
-@app.route("/login", methods=["POST"])
-def login():
-    data = request.json
-    email = data.get("email")
-    password = data.get("password")  # ✅ Get password from request
+@app.route("/login", methods=["POST"])  
+def login():  
+    data = request.json  
+    email = data.get("email")  
+    password = data.get("password")  # Get password from request  
 
-    if not (email and password):
-        return jsonify({"error": "Email and password required"}), 400
+    if not (email and password):  
+        return jsonify({"error": "Email and password required"}), 400  
 
-    users_ref = db.collection('users').where("email", "==", email).stream()
-    user_doc = next(users_ref, None)
+    # Query Firestore to find the user by email  
+    users_ref = db.collection('users').where("email", "==", email).stream()  
+    user_doc = next(users_ref, None)  
 
-    if not user_doc:
-        return jsonify({"error": "User not found"}), 404
+    if not user_doc:  
+        return jsonify({"error": "User not found"}), 404  
 
-    user = user_doc.to_dict()
+    user = user_doc.to_dict()  
 
-    # ✅ Check password
-    if not check_password_hash(user["pass"], password):
-        return jsonify({"error": "Incorrect password"}), 401
+    # Check password  
+    if not check_password_hash(user["pass"], password):  
+        return jsonify({"error": "Incorrect password"}), 401  
     
-    print("sucsess !!!")
-    return jsonify({
-        "name": user["name"],
-        "email": user["email"],
-        "role": user["role"],
-        "password":user["pass"],
-        "courseIds":user["courseIds"]
-    }), 200
+    print("Login successful!")  # Log for server-side tracking; consider using proper logging  
 
+    # Return user information, but do not include the password  
+    return jsonify({  
+        "name": user["name"],  
+        "email": user["email"],  
+        "role": user["role"],  
+        "courseIds": user.get("courseIds", [])  # Use .get() to prevent KeyError  
+    }), 200  
 
 @app.route("/get-courses", methods=["POST"])
 def get_courses():
