@@ -32,6 +32,7 @@ import os
 
 
 # API Endpoints
+from werkzeug.security import generate_password_hash, check_password_hash
 
 @app.route("/registerfac", methods=["POST","GET"])
 def registerFac():
@@ -40,7 +41,7 @@ def registerFac():
     email = data.get("email")
     passwd = data.get("password")
     
-    if not (name and email and passwd ):
+    if not (name and email and passwd):
         return jsonify({"error": "Missing fields"}), 400
     
     user = {
@@ -48,15 +49,15 @@ def registerFac():
         "email": email,
         "role": "Faculty",
         "courseIds": [],
-        "pass" : generate_password_hash(passwd)
+        "pass": generate_password_hash(passwd, method='pbkdf2:sha256')  # Change here
     }
     
     try:
         doc_ref = db.collection('users').add(user)
-        return jsonify({"message": "User registered", "id": doc_ref[1].id}), 201
+        return jsonify({"message": "User  registered", "id": doc_ref[1].id}), 201
     except Exception as e:
         return jsonify({"error": str(e)}), 500
-    
+
 @app.route("/registerstd", methods=["POST","GET"])
 def registerstd():
     data = request.json
@@ -64,7 +65,7 @@ def registerstd():
     email = data.get("email")
     passwd = data.get("password")
     
-    if not (name and email and passwd ):
+    if not (name and email and passwd):
         return jsonify({"error": "Missing fields"}), 400
     
     user = {
@@ -72,12 +73,12 @@ def registerstd():
         "email": email,
         "role": "Student",
         "courseIds": [],
-        "pass" : generate_password_hash(passwd)
+        "pass": generate_password_hash(passwd, method='pbkdf2:sha256')  # Change here
     }
     
     try:
         doc_ref = db.collection('users').add(user)
-        return jsonify({"message": "User registered", "id": doc_ref[1].id}), 201
+        return jsonify({"message": "User  registered", "id": doc_ref[1].id}), 201
     except Exception as e:
         return jsonify({"error": str(e)}), 500
     
@@ -95,24 +96,14 @@ def login():
     user_doc = next(users_ref, None)  
 
     if not user_doc:  
-        return jsonify({"error": "User not found"}), 404  
+        return jsonify({"error": "User  not found"}), 404  
 
     user = user_doc.to_dict()  
 
     # Check password  
-    if not check_password_hash(user["pass"], password):  
+    if not check_password_hash(user["pass"], password):  # This remains unchanged
         return jsonify({"error": "Incorrect password"}), 401  
-    
-    print("Login successful!")  # Log for server-side tracking; consider using proper logging  
-
-    # Return user information, but do not include the password  
-    return jsonify({  
-        "name": user["name"],  
-        "email": user["email"],  
-        "role": user["role"],  
-        "courseIds": user.get("courseIds", [])  # Use .get() to prevent KeyError  
-    }), 200  
-
+        
 @app.route("/get-courses", methods=["POST"])
 def get_courses():
     data = request.json
@@ -132,8 +123,6 @@ def get_courses():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 @app.route("/add-course", methods=["POST"])
-
-
 def add_course():
     data = request.json
     course_code = data.get("code")
