@@ -77,7 +77,7 @@ def registerstd():
         "email": email,
         "role": "Student",
         "courseIds": [],
-        "pass" : generate_password_hash(passwd)
+        "pass" : passwd
     }
     
     try:
