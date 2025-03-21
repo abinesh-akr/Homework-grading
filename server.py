@@ -33,76 +33,84 @@ import os
 
 # API Endpoints
 from werkzeug.security import generate_password_hash, check_password_hash
+from flask import Flask, request, jsonify  
+from werkzeug.security import generate_password_hash, check_password_hash  
+import firebase_admin  
+from firebase_admin import credentials, firestore  
 
-@app.route("/registerfac", methods=["POST","GET"])
-def registerFac():
-    data = request.json
-    name = data.get("name")
-    email = data.get("email")
-    passwd = data.get("password")
-    
-    if not (name and email and passwd):
-        return jsonify({"error": "Missing fields"}), 400
-    
-    user = {
-        "name": name,
-        "email": email,
-        "role": "Faculty",
-        "courseIds": [],
-        "pass": generate_password_hash(passwd, method='pbkdf2:sha256')  # Change here
-    }
-    
-    try:
-        doc_ref = db.collection('users').add(user)
-        return jsonify({"message": "User  registered", "id": doc_ref[1].id}), 201
-    except Exception as e:
-        return jsonify({"error": str(e)}), 500
+# Initialize your Flask app and Firestore setup here  
 
-@app.route("/registerstd", methods=["POST","GET"])
-def registerstd():
-    data = request.json
-    name = data.get("name")
-    email = data.get("email")
-    passwd = data.get("password")
-    
-    if not (name and email and passwd):
-        return jsonify({"error": "Missing fields"}), 400
-    
-    user = {
-        "name": name,
-        "email": email,
-        "role": "Student",
-        "courseIds": [],
-        "pass": generate_password_hash(passwd, method='pbkdf2:sha256')  # Change here
-    }
-    
-    try:
-        doc_ref = db.collection('users').add(user)
-        return jsonify({"message": "User  registered", "id": doc_ref[1].id}), 201
-    except Exception as e:
-        return jsonify({"error": str(e)}), 500
-    
+@app.route("/registerfac", methods=["POST"])  
+def registerFac():  
+    data = request.json  
+    name = data.get("name")  
+    email = data.get("email")  
+    passwd = data.get("password")  
+
+    if not (name and email and passwd):  
+        return jsonify({"error": "Missing fields"}), 400  
+
+    user = {  
+        "name": name,  
+        "email": email,  
+        "role": "Faculty",  
+        "courseIds": [],  
+        "pass": generate_password_hash(passwd, method='pbkdf2:sha256')  
+    }  
+
+    try:  
+        doc_ref = db.collection('users').add(user)  
+        return jsonify({"message": "User registered", "id": doc_ref.id}), 201  
+    except Exception as e:  
+        return jsonify({"error": str(e)}), 500  
+
+@app.route("/registerstd", methods=["POST"])  
+def registerstd():  
+    data = request.json  
+    name = data.get("name")  
+    email = data.get("email")  
+    passwd = data.get("password")  
+
+    if not (name and email and passwd):  
+        return jsonify({"error": "Missing fields"}), 400  
+
+    user = {  
+        "name": name,  
+        "email": email,  
+        "role": "Student",  
+        "courseIds": [],  
+        "pass": generate_password_hash(passwd, method='pbkdf2:sha256')  
+    }  
+
+    try:  
+        doc_ref = db.collection('users').add(user)  
+        return jsonify({"message": "User registered", "id": doc_ref.id}), 201  
+    except Exception as e:  
+        return jsonify({"error": str(e)}), 500  
+
 @app.route("/login", methods=["POST"])  
 def login():  
     data = request.json  
     email = data.get("email")  
-    password = data.get("password")  # Get password from request  
+    password = data.get("password")  
 
     if not (email and password):  
         return jsonify({"error": "Email and password required"}), 400  
 
     # Query Firestore to find the user by email  
-    users_ref = db.collection('users').where("email", "==", email).stream()  
-    user_doc = next(users_ref, None)  
+    user_ref = db.collection('users').where("email", "==", email).stream()  
+    user_doc = next(user_ref, None)  
 
     if not user_doc:  
-        return jsonify({"error": "User  not found"}), 404  
+        return jsonify({"error": "User not found"}), 404  
 
     user = user_doc.to_dict()  
 
     # Check password  
-    if not check_password_hash(user["pass"], password):  # This remains unchanged
+    if not check_password_hash(user["pass"], password):  
         return jsonify({"error": "Incorrect password"}), 401  
+
+    return jsonify({"message": "Login successful", "user": {"name": user["name"], "role": user["role"]}}), 200  
         
 @app.route("/get-courses", methods=["POST"])
 def get_courses():
