@@ -39,7 +39,6 @@ import firebase_admin
 from firebase_admin import credentials, firestore  
 
 # Initialize your Flask app and Firestore setup here  
-
 @app.route("/registerfac", methods=["POST"])  
 def registerFac():  
     data = request.json  
@@ -59,7 +58,9 @@ def registerFac():
     }  
 
     try:  
+        # Add the user and get the document reference  
         doc_ref = db.collection('users').add(user)  
+        # Access the document ID  
         return jsonify({"message": "User registered", "id": doc_ref.id}), 201  
     except Exception as e:  
         return jsonify({"error": str(e)}), 500  
@@ -83,7 +84,9 @@ def registerstd():
     }  
 
     try:  
+        # Add the user and get the document reference  
         doc_ref = db.collection('users').add(user)  
+        # Access the document ID  
         return jsonify({"message": "User registered", "id": doc_ref.id}), 201  
     except Exception as e:  
         return jsonify({"error": str(e)}), 500  
